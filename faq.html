@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Free Hosting</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <div class="navbar-logo">FH</div>
+                <span class="navbar-name">Free Hosting</span>
+            </a>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="hosting.html" class="navbar-link">Hosting</a></li>
+                <li><a href="index.html#features" class="navbar-link">Features</a></li>
+                <li><a href="status.html" class="navbar-link">Status</a></li>
+                <li><a href="faq.html" class="navbar-link active">FAQ</a></li>
+            </ul>
+            <div class="navbar-actions navbar-auth">
+                <a href="login.html" class="btn btn-secondary">Login</a>
+                <a href="register.html" class="btn btn-primary">Create Account</a>
+            </div>
+            <div class="navbar-actions navbar-user hidden">
+                <a href="dashboard.html" class="btn btn-secondary">Dashboard</a>
+                <a href="account.html" class="btn btn-secondary">Profile</a>
+                <button id="logout-btn" class="btn btn-danger">Logout</button>
+            </div>
+            <button class="navbar-toggle" id="navbar-toggle">☰</button>
+        </div>
+    </nav>
+
+    <div class="navbar-mobile" id="navbar-mobile">
+        <a href="index.html" class="navbar-mobile-link">Home</a>
+        <a href="hosting.html" class="navbar-mobile-link">Hosting</a>
+        <a href="index.html#features" class="navbar-mobile-link">Features</a>
+        <a href="status.html" class="navbar-mobile-link">Status</a>
+        <a href="faq.html" class="navbar-mobile-link active">FAQ</a>
+        <div class="navbar-mobile-actions navbar-auth">
+            <a href="login.html" class="btn btn-secondary">Login</a>
+            <a href="register.html" class="btn btn-primary">Create Account</a>
+        </div>
+        <div class="navbar-mobile-actions navbar-user hidden">
+            <a href="dashboard.html" class="btn btn-secondary">Dashboard</a>
+            <a href="account.html" class="btn btn-secondary">Profile</a>
+            <button id="logout-btn-mobile" class="btn btn-danger">Logout</button>
+        </div>
+    </div>
+
+    <main class="section" style="padding-top: 100px;">
+        <div class="container">
+            <h1 class="text-center mb-xl">Frequently Asked Questions</h1>
+
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question">What is Free Hosting?</div>
+                    <div class="faq-answer">Free Hosting is a platform that provides free hosting for Discord bots, powered by Pterodactyl infrastructure.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I host my Discord bot?</div>
+                    <div class="faq-answer">Create an account, then create a server in the dashboard. Upload your bot files and start the server.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What programming languages are supported?</div>
+                    <div class="faq-answer">We support Node.js and Python for Discord bot hosting.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What is Pterodactyl?</div>
+                    <div class="faq-answer">Pterodactyl is a server management panel that we use to power our hosting infrastructure.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I upload my bot?</div>
+                    <div class="faq-answer">You can upload files directly through the file manager, or connect a Git repository.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I restart my bot?</div>
+                    <div class="faq-answer">Yes, you can start, stop, restart, and kill your bot from the server management page.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What happens if my bot crashes?</div>
+                    <div class="faq-answer">You can configure automatic startup in the settings to restart your bot automatically after crashes.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What are the resource limits?</div>
+                    <div class="faq-answer">Resource limits are provided by your hosting configuration and vary by plan.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is the hosting really free?</div>
+                    <div class="faq-answer">Yes, we offer free hosting for Discord bots with basic resource allocations.</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>

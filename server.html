@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server - Free Hosting</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/server.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <div class="navbar-logo">FH</div>
+                <span class="navbar-name">Free Hosting</span>
+            </a>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="hosting.html" class="navbar-link">Hosting</a></li>
+                <li><a href="index.html#features" class="navbar-link">Features</a></li>
+                <li><a href="status.html" class="navbar-link">Status</a></li>
+                <li><a href="faq.html" class="navbar-link">FAQ</a></li>
+            </ul>
+            <div class="navbar-actions navbar-auth hidden">
+                <a href="login.html" class="btn btn-secondary">Login</a>
+                <a href="register.html" class="btn btn-primary">Create Account</a>
+            </div>
+            <div class="navbar-actions navbar-user">
+                <a href="dashboard.html" class="btn btn-secondary">Dashboard</a>
+                <a href="account.html" class="btn btn-secondary">Profile</a>
+                <button id="logout-btn" class="btn btn-danger">Logout</button>
+            </div>
+            <button class="navbar-toggle" id="navbar-toggle">☰</button>
+        </div>
+    </nav>
+
+    <div class="server-layout">
+        <aside class="server-sidebar">
+            <div class="sidebar-header">
+                <div style="font-weight: 600; font-size: 1.125rem;" id="server-name">Server Name</div>
+                <div class="mt-sm">
+                    <span class="status" id="server-status">
+                        <span class="status-dot"></span>
+                        <span id="status-text">Unknown</span>
+                    </span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul class="sidebar-nav-list">
+                    <li class="sidebar-nav-item">
+                        <a href="#" class="sidebar-nav-link active" data-section="console">
+                            <span class="sidebar-nav-icon">💻</span>
+                            Console
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#" class="sidebar-nav-link" data-section="resources">
+                            <span class="sidebar-nav-icon">📊</span>
+                            Resources
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#" class="sidebar-nav-link" data-section="files">
+                            <span class="sidebar-nav-icon">📁</span>
+                            Files
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#" class="sidebar-nav-link" data-section="startup">
+                            <span class="sidebar-nav-icon">⚙️</span>
+                            Startup
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#" class="sidebar-nav-link" data-section="settings">
+                            <span class="sidebar-nav-icon">🔧</span>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="server-content">
+            <div class="server-header">
+                <div class="server-title">
+                    <h1 id="server-name-header">Server Name</h1>
+                </div>
+                <div class="server-controls">
+                    <button id="btn-start" class="btn btn-primary">Start</button>
+                    <button id="btn-restart" class="btn btn-secondary">Restart</button>
+                    <button id="btn-stop" class="btn btn-secondary">Stop</button>
+                    <button id="btn-kill" class="btn btn-danger">Kill</button>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <button class="tab active" data-tab="console">Console</button>
+                <button class="tab" data-tab="resources">Resources</button>
+                <button class="tab" data-tab="files">Files</button>
+                <button class="tab" data-tab="startup">Startup</button>
+                <button class="tab" data-tab="settings">Settings</button>
+            </div>
+
+            <div id="console" class="tab-content active">
+                <div class="console-container">
+                    <div class="console-header">
+                        <span class="console-title">Server Console</span>
+                    </div>
+                    <div class="console-output" id="console-output">
+                        <div class="console-line">Console unavailable</div>
+                    </div>
+                    <div class="console-input-container">
+                        <input type="text" id="console-input" class="console-input" placeholder="Send command...">
+                        <button id="console-send" class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resources" class="tab-content">
+                <h2>Resource Usage</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-label">CPU</span>
+                        </div>
+                        <div class="resource-value empty" id="resource-cpu-value">—</div>
+                        <div class="resource-bar">
+                            <div class="resource-bar-fill" id="resource-cpu-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-label">RAM</span>
+                        </div>
+                        <div class="resource-value empty" id="resource-ram-value">—</div>
+                        <div class="resource-bar">
+                            <div class="resource-bar-fill" id="resource-ram-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-label">Disk</span>
+                        </div>
+                        <div class="resource-value empty" id="resource-disk-value">—</div>
+                        <div class="resource-bar">
+                            <div class="resource-bar-fill" id="resource-disk-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-label">Network</span>
+                        </div>
+                        <div class="resource-value empty" id="resource-network-value">—</div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-label">Uptime</span>
+                        </div>
+                        <div class="resource-value empty" id="resource-uptime-value">—</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="files" class="tab-content">
+                <h2>File Manager</h2>
+                <div class="file-manager">
+                    <div class="file-toolbar">
+                        <div class="file-path" id="file-path">/</div>
+                        <div class="file-actions">
+                            <button id="btn-upload" class="btn btn-secondary btn-sm">Upload</button>
+                            <input type="file" id="file-input" style="display: none;">
+                            <button id="btn-create-folder" class="btn btn-secondary btn-sm">Create Folder</button>
+                        </div>
+                    </div>
+                    <div class="file-list" id="file-list">
+                        <div class="empty-state">Unable to load files</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="startup" class="tab-content">
+                <h2>Startup Configuration</h2>
+                <div class="card" style="max-width: 600px;">
+                    <div class="form-group">
+                        <label for="startup-command" class="form-label">Startup Command</label>
+                        <input type="text" id="startup-command" class="form-input" placeholder="npm start">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Environment Variables</label>
+                        <div class="card" style="padding: var(--spacing-md);">
+                            Provided by backend configuration
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Node Version</label>
+                        <div class="card" style="padding: var(--spacing-md);">
+                            Provided by backend configuration
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Python Version</label>
+                        <div class="card" style="padding: var(--spacing-md);">
+                            Provided by backend configuration
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="settings" class="tab-content">
+                <h2>Server Settings</h2>
+                <div class="card" style="max-width: 600px; margin-bottom: var(--spacing-xl);">
+                    <h3 style="margin-bottom: var(--spacing-md);">Rename Server</h3>
+                    <div class="form-group">
+                        <label for="rename-server" class="form-label">Server Name</label>
+                        <input type="text" id="rename-server" class="form-input" placeholder="New server name">
+                    </div>
+                    <button class="btn btn-primary">Rename</button>
+                </div>
+
+                <div class="card" style="max-width: 600px; margin-bottom: var(--spacing-xl);">
+                    <h3 style="margin-bottom: var(--spacing-md);">Dangerous Actions</h3>
+                    <div class="flex gap-md">
+                        <button class="btn btn-secondary">Reinstall Server</button>
+                        <button id="btn-delete-server" class="btn btn-danger">Delete Server</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/server.js"></script>
+    <script src="js/files.js"></script>
+</body>
+</html>

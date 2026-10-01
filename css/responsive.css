@@ -1,0 +1,123 @@
+/* Responsive Utilities */
+
+/* Mobile First Approach */
+
+/* Extra Small Devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .card {
+        padding: var(--spacing-lg);
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .btn-sm,
+    .btn-lg {
+        width: auto;
+    }
+    
+    .table {
+        font-size: 0.75rem;
+    }
+    
+    .table th,
+    .table td {
+        padding: var(--spacing-sm);
+    }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .container {
+        padding: 0 var(--spacing-xl);
+    }
+}
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 var(--spacing-xl);
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .navbar,
+    .dashboard-sidebar,
+    .server-sidebar,
+    .btn {
+        display: none;
+    }
+    
+    .card {
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --border: #ffffff;
+        --border-light: #ffffff;
+    }
+    
+    .card,
+    .btn {
+        border: 2px solid var(--border);
+    }
+}
+
+/* Dark Mode System Preference */
+@media (prefers-color-scheme: dark) {
+    /* Already using dark theme by default */
+}
+
+/* Light Mode System Preference (if needed in future) */
+@media (prefers-color-scheme: light) {
+    /* Can add light mode overrides here if needed */
+}

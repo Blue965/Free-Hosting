@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Server - Free Hosting</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <div class="navbar-logo">FH</div>
+                <span class="navbar-name">Free Hosting</span>
+            </a>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="hosting.html" class="navbar-link">Hosting</a></li>
+                <li><a href="index.html#features" class="navbar-link">Features</a></li>
+                <li><a href="status.html" class="navbar-link">Status</a></li>
+                <li><a href="faq.html" class="navbar-link">FAQ</a></li>
+            </ul>
+            <div class="navbar-actions navbar-auth hidden">
+                <a href="login.html" class="btn btn-secondary">Login</a>
+                <a href="register.html" class="btn btn-primary">Create Account</a>
+            </div>
+            <div class="navbar-actions navbar-user">
+                <a href="dashboard.html" class="btn btn-secondary">Dashboard</a>
+                <a href="account.html" class="btn btn-secondary">Profile</a>
+                <button id="logout-btn" class="btn btn-danger">Logout</button>
+            </div>
+            <button class="navbar-toggle" id="navbar-toggle">☰</button>
+        </div>
+    </nav>
+
+    <div class="dashboard-layout">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div style="font-weight: 600; font-size: 1.125rem;" id="sidebar-username">User</div>
+                <div style="font-size: 0.875rem; color: var(--text-muted);" id="sidebar-email">user@email.com</div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul class="sidebar-nav-list">
+                    <li class="sidebar-nav-item">
+                        <a href="dashboard.html" class="sidebar-nav-link">
+                            <span class="sidebar-nav-icon">📊</span>
+                            Overview
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="dashboard.html" class="sidebar-nav-link">
+                            <span class="sidebar-nav-icon">🖥️</span>
+                            Servers
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="create-server.html" class="sidebar-nav-link active">
+                            <span class="sidebar-nav-icon">➕</span>
+                            Create Server
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="account.html" class="sidebar-nav-link">
+                            <span class="sidebar-nav-icon">👤</span>
+                            Account
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#" class="sidebar-nav-link" id="sidebar-logout">
+                            <span class="sidebar-nav-icon">🚪</span>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="dashboard-content">
+            <h1>Create a Discord Bot Server</h1>
+
+            <div class="card" style="max-width: 600px;">
+                <form id="create-server-form">
+                    <div class="form-group">
+                        <label for="serverName" class="form-label">Server Name</label>
+                        <input type="text" id="serverName" name="serverName" class="form-input" placeholder="My Discord Bot" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="runtime" class="form-label">Runtime</label>
+                        <select id="runtime" name="runtime" class="form-select" required>
+                            <option value="">Select runtime</option>
+                            <option value="nodejs">Node.js</option>
+                            <option value="python">Python</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="botType" class="form-label">Bot Type</label>
+                        <select id="botType" name="botType" class="form-select" required>
+                            <option value="">Select bot type</option>
+                            <option value="discord-bot">Discord Bot</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="version" class="form-label">Version</label>
+                        <select id="version" name="version" class="form-select" required>
+                            <option value="">Select version</option>
+                            <option value="nodejs-20">Node.js 20</option>
+                            <option value="nodejs-22">Node.js 22</option>
+                            <option value="python-3.11">Python 3.11</option>
+                            <option value="python-3.12">Python 3.12</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">RAM</label>
+                        <div class="card" style="padding: var(--spacing-md);">
+                            Provided by hosting configuration
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">CPU</label>
+                        <div class="card" style="padding: var(--spacing-md);">
+                            Provided by hosting configuration
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Storage</label>
+                        <div class="card" style="padding: var(--spacing-md);">
+                            Provided by hosting configuration
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Create Server</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
