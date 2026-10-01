@@ -15,8 +15,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
-// Base de données SQLite
-const db = new sqlite3.Database('./database.sqlite');
+// Base de données SQLite (pour Vercel, utilisez /tmp)
+const dbPath = process.env.VERCEL ? '/tmp/database.sqlite' : './database.sqlite';
+const db = new sqlite3.Database(dbPath);
 
 // Initialiser la base de données
 db.serialize(() => {
